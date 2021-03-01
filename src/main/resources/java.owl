@@ -1,0 +1,420 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/mindmap/ontology#"
+     xml:base="http://www.semanticweb.org/mindmap/ontology"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/mindmap/ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#antonymOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mindmap/ontology#antonymOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#exampleOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mindmap/ontology#exampleOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#hyponymOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mindmap/ontology#hyponymOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#kindOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mindmap/ontology#kindOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#partOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mindmap/ontology#partOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#precursorOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mindmap/ontology#precursorOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#referenceOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mindmap/ontology#referenceOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#successorOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mindmap/ontology#successorOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#synonymOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mindmap/ontology#synonymOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#wholeOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mindmap/ontology#wholeOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#Description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mindmap/ontology#Description">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#Property -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mindmap/ontology#Property">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#Title -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mindmap/ontology#Title">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#Type -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mindmap/ontology#Type">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#KElement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#javaFX -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mindmap/ontology#javaFX">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <Title>javaFX</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#java框架 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mindmap/ontology#java框架">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <precursorOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#javaFX"/>
+        <precursorOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#异常"/>
+        <precursorOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#I/O"/>
+        <Title>java框架</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#java程序设计 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mindmap/ontology#java程序设计">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <wholeOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#java框架"/>
+        <wholeOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#基础知识"/>
+        <wholeOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#结构化编程"/>
+        <wholeOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#面向对象"/>
+        <Title>java程序设计</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#变量 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mindmap/ontology#变量">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <Title>变量</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#基础知识 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mindmap/ontology#基础知识">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <precursorOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#结构化编程"/>
+        <wholeOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#编程环境与平台"/>
+        <wholeOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#编程语言分类"/>
+        <wholeOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#计算机基础知识"/>
+        <Title>基础知识</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#多态 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mindmap/ontology#多态">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <Title>多态</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#封装 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mindmap/ontology#封装">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <Title>封装</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#异常 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mindmap/ontology#异常">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <Title>异常</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#数组 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mindmap/ontology#数组">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <Title>数组</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#方法 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mindmap/ontology#方法">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <Title>方法</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#核心基础知识 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mindmap/ontology#核心基础知识">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <precursorOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#数组"/>
+        <precursorOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#方法"/>
+        <precursorOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#流程控制"/>
+        <wholeOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#变量"/>
+        <wholeOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#语句"/>
+        <wholeOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#运算符与表达式"/>
+        <Title>核心基础知识</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#流程控制 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mindmap/ontology#流程控制">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <Title>流程控制</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#类与对象基础 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mindmap/ontology#类与对象基础">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <precursorOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#多态"/>
+        <precursorOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#封装"/>
+        <precursorOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#继承"/>
+        <Title>类与对象基础</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#结构化编程 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mindmap/ontology#结构化编程">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <precursorOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#面向对象"/>
+        <wholeOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#数组"/>
+        <wholeOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#方法"/>
+        <wholeOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#核心基础知识"/>
+        <wholeOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#流程控制"/>
+        <Title>结构化编程</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#继承 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mindmap/ontology#继承">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <Title>继承</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#编程环境与平台 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mindmap/ontology#编程环境与平台">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <Title>编程环境与平台</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#编程语言分类 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mindmap/ontology#编程语言分类">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <Title>编程语言分类</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#计算机基础知识 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mindmap/ontology#计算机基础知识">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <Title>计算机基础知识</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#语句 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mindmap/ontology#语句">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <Title>语句</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#运算符与表达式 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mindmap/ontology#运算符与表达式">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <Title>运算符与表达式</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#面向对象 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mindmap/ontology#面向对象">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <precursorOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#java框架"/>
+        <wholeOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#多态"/>
+        <wholeOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#封装"/>
+        <wholeOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#类与对象基础"/>
+        <wholeOf rdf:resource="http://www.semanticweb.org/mindmap/ontology#继承"/>
+        <Title>面向对象</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mindmap/ontology#I/O -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mindmap/ontology#I/O">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mindmap/ontology#KElement"/>
+        <Title>I/O</Title>
+        <Type>KElement</Type>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
