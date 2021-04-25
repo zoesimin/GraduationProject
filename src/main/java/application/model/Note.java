@@ -4,7 +4,7 @@ import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
 
-@NodeEntity(label = "Note") //neo4j中没有这个类
+@NodeEntity(label = "Note") //一个节点可以有多个节点标签
 public class Note {
     @Id
     @GeneratedValue

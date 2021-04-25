@@ -27,4 +27,8 @@ public interface AssignmentJudgmentRepository extends Neo4jRepository<Assignment
 
     @Query("MATCH (n:Assignment_judgment) RETURN n ")
     List<AssignmentJudgment> getAll();
+
+    //改：通过id删除某具体的Assignment_judgment节点
+    @Query("MATCH (a:Assignment_judgment) where ID(a) = {0} delete a")
+    void deleteAssignmentJudgementById(@Param("id") Long id);
 }

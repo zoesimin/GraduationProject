@@ -195,5 +195,25 @@ public class Node {
         return assignmentJudgments;
     }
 
-
+    @Override
+    public String toString() {
+        return "Node{" +
+                "long_id=" + long_id +
+                ", course_mindmap='" + course_mindmap + '\'' +
+                ", id='" + id + '\'' +
+                ", topic='" + topic + '\'' +
+                ", background_color='" + background_color + '\'' +
+                ", foreground_color='" + foreground_color + '\'' +
+                ", expanded=" + expanded +
+                ", direction='" + direction + '\'' +
+                ", children=" + children +
+                ", materials=" + materials +
+                ", coursewares=" + coursewares +
+                ", links=" + links +
+                ", assignmentMultiples=" + assignmentMultiples +
+                ", assignmentJudgments=" + assignmentJudgments +
+                ", assignmentShorts=" + assignmentShorts +
+                ", notes=" + notes +
+                '}';
+    }
 }

@@ -92,4 +92,13 @@ public class CourseController {
         }
         return course_jsons;
     }
+
+    //改：删除课程与学生之间的关系
+    @RequestMapping(value = "/course_delete_student/{course_id}/{user_name}", method = RequestMethod.GET)
+    public Success course_delete_student(@PathVariable String course_id,@PathVariable String user_name) {
+        Success success = new Success();
+        System.out.println("删除课程与学生之间的关系");
+        success.setSuccess(courseService.deleteStudentToCourse(course_id, user_name));
+        return success;
+    }
 }

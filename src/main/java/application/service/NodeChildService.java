@@ -145,7 +145,7 @@ public class NodeChildService {
     }
 
     public void deleteMaterial(String materialName, String storeAddress) {
-        Material material = getMaterial(materialName, storeAddress);
+        Material material = getMaterial(materialName,storeAddress);
         materialRepository.delete(material);
     }
 

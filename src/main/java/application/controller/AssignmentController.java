@@ -24,7 +24,7 @@ public class AssignmentController {
     public List<AssignmentShort_json> shorts(
             @PathVariable String course_id, @PathVariable String mindmap_id, @PathVariable String node_id) {
 
-        String shortId = course_id + " " + mindmap_id + " " + node_id;
+        String shortId = course_id + " " + mindmap_id + " " + node_id;//对于简答题,所有的shortId都一样;教师发布的题目通过和学生回答节点的属性相绑定
         List<AssignmentShort> shorts = nodeChildService.findShorts(shortId);
 
         List<AssignmentShort_json> short_jsons = new LinkedList<>();
@@ -369,7 +369,7 @@ public class AssignmentController {
     public List<AssignmentJudgment_json> judgments_teacher(@PathVariable String course_id, @PathVariable String mindmap_id,
                                                            @PathVariable String node_id) {
 
-        String judgeId =course_id + " " + mindmap_id + " " + node_id;
+        String judgeId = course_id + " " + mindmap_id + " " + node_id;
         List<AssignmentJudgment> judgments = nodeChildService.findJudgements(judgeId);
 
         List<AssignmentJudgment_json> judgment_jsons = new LinkedList<>();
@@ -386,6 +386,9 @@ public class AssignmentController {
         }
 
         return judgment_jsons;
+
+
+
     }
 
     // 发布选择题
@@ -445,7 +448,7 @@ public class AssignmentController {
     }
 
     // 发布简答题
-    @RequestMapping(value = "/release_short/{course_id}/{mindmap_id}/{node_id}", method = RequestMethod.POST)
+     @RequestMapping(value = "/release_short/{course_id}/{mindmap_id}/{node_id}", method = RequestMethod.POST)
     public Success release_short(@PathVariable String course_id, @PathVariable String mindmap_id, @PathVariable String node_id, @RequestBody AssignmentShort assignmentShort) {
 
         Success success = new Success();
@@ -470,7 +473,6 @@ public class AssignmentController {
         }
         return success;
     }
-
 
     // 对于某个节点，学生的所有回答
     @RequestMapping(value = "/student_answer_node/{course_id}/{mindmap_id}/{node_id}/{username}", method = RequestMethod.GET)
@@ -498,34 +500,43 @@ public class AssignmentController {
 //    }
 
 
-
     @RequestMapping(value = "/getAllAssignmentShorts", method = RequestMethod.GET)
     public List<AssignmentShort> getAllAssignmentShorts() {
         return nodeChildService.getAllAssignmentShort();
     }
 
-//    @RequestMapping(value = "/delete_short/{id}", method = RequestMethod.DELETE)
-//    public Success deleteShort(@PathVariable Long id) {
-//        Success success = new Success();
-//        nodeChildService.deleteAssignmentShortFather(id);
-//        success.setSuccess(true);
-//        System.out.println("aaaaaaaaaaaaaaaaaaaaaaa");
-//        return success;
-//    }
-//
-//    @RequestMapping(value = "/delete_judge/{id}", method = RequestMethod.DELETE)
-//    public Success deleteJudge(@PathVariable Long id) {
-//        Success success = new Success();
-//        nodeChildService.deleteAssignmentJudgeFather(id);
-//        success.setSuccess(true);
-//        return success;
-//    }
-//
-//    @RequestMapping(value = "/delete_multiple/{id}", method = RequestMethod.DELETE)
-//    public Success deleteMultiple(@PathVariable Long id) {
-//        Success success = new Success();
-//        nodeChildService.deleteAssignmentMultiFather(id);
-//        success.setSuccess(true);
-//        return success;
-//    }
+    //改：删除发布的选择题
+    @RequestMapping(value = "/delete_multiple/{course_id}/{mindmap_id}/{node_id}/{assignmentLongId}", method = RequestMethod.DELETE)
+    public Success delete_multiple(
+            @PathVariable String course_id,@PathVariable String mindmap_id,
+            @PathVariable String node_id,@PathVariable Long assignmentLongId){
+        Success success = new Success();
+        System.out.println("删除发布的选择题");
+        success.setSuccess(nodeService.deleteMultiple(course_id,mindmap_id,node_id,assignmentLongId));
+        return success;
+    }
+
+    //改：删除发布的判断题
+    @RequestMapping(value = "/delete_judgment/{course_id}/{mindmap_id}/{node_id}/{assignmentLongId}", method = RequestMethod.DELETE)
+    public Success delete_judgment(
+            @PathVariable String course_id,@PathVariable String mindmap_id,
+            @PathVariable String node_id,@PathVariable Long assignmentLongId){
+        Success success = new Success();
+        System.out.println("删除发布的判断题");
+        success.setSuccess(nodeService.deleteJudgment(course_id,mindmap_id,node_id,assignmentLongId));
+        return success;
+    }
+
+    //改：删除发布的简答题
+    @RequestMapping(value = "/delete_short/{course_id}/{mindmap_id}/{node_id}/{assignmentLongId}", method = RequestMethod.DELETE)
+    public Success delete_short(
+            @PathVariable String course_id,@PathVariable String mindmap_id,
+            @PathVariable String node_id,@PathVariable Long assignmentLongId){
+        Success success = new Success();
+        System.out.println("删除发布的简答题");
+        success.setSuccess(nodeService.deleteShort(course_id,mindmap_id,node_id,assignmentLongId));
+        return success;
+    }
+
+
 }

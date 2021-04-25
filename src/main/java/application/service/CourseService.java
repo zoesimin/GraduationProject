@@ -1,5 +1,6 @@
 package application.service;
 
+import application.controller.json_model.User;
 import application.model.*;
 import application.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -244,5 +245,29 @@ public class CourseService {
                 flag = false;
         }
         return code;
+    }
+
+    //改：删除选了这门课的学生（删除学生和课程之间的关系），同时课程人数要减一
+    public boolean deleteStudentToCourse(String course_id, String user_name) {
+        Course course = courseRepository.findByCourseId(course_id);
+        if(course==null)
+            return false;
+        Student student = studentRepository.findByName(user_name);
+        if(student==null)
+            return false;
+        Course[] courses = studentRepository.findCourses(student.getId());
+
+        for (Course c:courses){
+            if(c.getCourse_id().equals(course.getCourse_id())){
+                //course的选课人数减1
+                int number_before = Integer.parseInt(course.getCourse_number());
+                course.setCourse_number((number_before - 1) + "");
+                courseRepository.save(course);
+                //再删除关系
+                studentRepository.deleteStudentToCourse(course_id,user_name);
+                return true;
+            }
+        }
+        return false;
     }
 }

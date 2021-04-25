@@ -5,11 +5,12 @@ import org.neo4j.ogm.annotation.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@NodeEntity(label = "Teacher") //对应neo4j teacher的节点
+//将常规类转换为实体类
+@NodeEntity(label = "Teacher") //对应于teacher的节点标签
 public class Teacher {
     @Id  // 标注用于声明一个实体类的属性映射为数据库的主键列
     @GeneratedValue //标注主键的生成策略，通过strategy 属性指定（默认为auto）
-    private Long id;
+    private Long id;  //id是neo4j自动分配的
     private String name;
     private String password;
 

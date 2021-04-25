@@ -32,4 +32,9 @@ public interface AssignmentShortRepository extends Neo4jRepository<AssignmentSho
     @Query("MATCH (n:Node)-[r:HAS_ASSIGNMENT_SHORT]-(s:Assignment_short)" +
             " where ID(n) = {0} return s")
     List<AssignmentShort> getAssignmentShortsByNodeId(long nid);
+
+    //改：通过id删除某具体的Assignment_short节点
+    @Query("MATCH (a:Assignment_short) where ID(a) = {0} delete a")
+    void deleteAssignmentShortById(@Param("id") Long id);
+
 }

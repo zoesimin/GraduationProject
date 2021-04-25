@@ -51,6 +51,7 @@ public class MindmapController {
         return json;
     }
 
+    //course_id课程下思维导图列表
     @RequestMapping(value = "/mindmap_id_list/{course_id}", method = RequestMethod.GET)
     public MindmapIdName[] mindmap_id_list(@PathVariable String course_id) {
         //先找到course
@@ -94,6 +95,7 @@ public class MindmapController {
         if (tempMindmap != null)
             if_exist = true;
 
+        //Gson提供了fromJson()方法来实现从Json相关对象到java实体的方法
         Mindmap_json mindmap_json = gson.fromJson(json_string, Mindmap_json.class);
 
         String mindmap_name = mindmap_json.getMeta().getName();

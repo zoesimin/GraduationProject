@@ -44,6 +44,8 @@
         </dependency>
 
         <!-- neo4j -->
+<!--        各组件直接的搭档配合和版本密切相关-->
+<!--        Neo4j总共有三种连接方式。常用的有两种，一种是http的连接方式【端口：7474】，一种是Bolt的连接方式【端口：7687】-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-neo4j</artifactId>

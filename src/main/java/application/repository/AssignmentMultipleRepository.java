@@ -28,4 +28,8 @@ public interface AssignmentMultipleRepository extends Neo4jRepository<Assignment
 
     @Query("MATCH (n:Assignment_multiple) RETURN n ")
     List<AssignmentMultiple> getAll();
+
+    //改：通过id删除某具体的Assignment_multiple节点
+    @Query("MATCH (a:Assignment_multiple) where ID(a) = {0} delete a")
+    void deleteAssignmentMultipleById(@Param("id") Long id);
 }

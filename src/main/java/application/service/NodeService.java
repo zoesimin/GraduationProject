@@ -111,8 +111,7 @@ public class NodeService {
             nodeRepository.save(node);
         }
     }
-
-//    public  List<NodeValue> getNodeValue(String mindmap_id) {
+    //    public  List<NodeValue> getNodeValue(String mindmap_id) {
 //        List<NodeValue> nodeValueList = new ArrayList<>();
 //        //获得mindmap
 //        Mindmap tempMindmap = mindmapService.findByMindmapId(mindmap_id);
@@ -187,4 +186,122 @@ public class NodeService {
 //
 //        return nodeValueList;
 //    }
+
+    //改:删除发布的选择题
+    public boolean deleteMultiple(String course_id,String mindmap_id,String node_id,Long assignmentLongId) {
+        //找到node
+        String course_mindmap = course_id + " " + mindmap_id;
+        Node node = nodeRepository.findByNodeId(course_mindmap,node_id);
+
+        if(node == null)
+            return false;
+        if(assignmentLongId == null)
+            return false;
+//        测试的时候打印相应信息
+//        System.out.println(node.toString());
+
+        //看该节点所有选择题中是否有该选择题
+        AssignmentMultiple[] assignmentMultiples = nodeRepository.findAssignmentMultiple(node.getLong_id());
+        System.out.println(assignmentMultiples.length);//有些节点和选择题之间没有成功插入关系,所以没插入成功的会length为0
+        if(assignmentMultiples.length!=0){ //跟它有关系的节点数
+            for(AssignmentMultiple a:assignmentMultiples){
+                if(a.getId().equals(assignmentLongId)){
+                    System.out.println("删除的选择题id:"+a.getId());
+                    //通过assignmentLongId删除HAS_ASSIGNMENT_MULTI关系
+                    nodeRepository.deleteNodeToMultiple(node.getLong_id(),assignmentLongId);
+                    //删除该选择题
+                    assignmentMultipleRepository.deleteAssignmentMultipleById(assignmentLongId);
+                    return true;
+                }
+            }
+        }else{
+            AssignmentMultiple assignmentMultiple =  assignmentMultipleRepository.getAssignmentMultipleById(assignmentLongId);
+            if(assignmentMultiple == null)
+                return false;
+            //删除该选择题
+            assignmentMultipleRepository.deleteAssignmentMultipleById(assignmentLongId);
+            System.out.println("删除的选择题id:"+assignmentLongId);
+            return true;
+        }
+        return false;
+    }
+
+    //改:删除发布的判断题
+    public boolean deleteJudgment(String course_id, String mindmap_id, String node_id, Long assignmentLongId) {
+        //找到node
+        String course_mindmap = course_id + " " + mindmap_id;
+        Node node = nodeRepository.findByNodeId(course_mindmap,node_id);
+
+        if(node == null)
+            return false;
+        if(assignmentLongId == null)
+            return false;
+
+//        测试的时候打印相应信息
+//        System.out.println(node.toString());
+
+        //看该节点所有判断题中是否有该判断题
+        AssignmentJudgment[] assignmentJudgments = nodeRepository.findAssignmentJudgments(node.getLong_id());
+        System.out.println(assignmentJudgments.length);
+        if(assignmentJudgments.length != 0){
+            for(AssignmentJudgment a:assignmentJudgments){
+                if(a.getId().equals(assignmentLongId)){
+                    System.out.println("删除的判断题id:"+a.getId());
+                    //通过assignmentLongId删除HAS_ASSIGNMENT_JUDGMENT关系
+                    nodeRepository.deleteNodeToJudgement(node.getLong_id(),assignmentLongId);
+                    //再删除该判断题
+                    assignmentJudgmentRepository.deleteAssignmentJudgementById(assignmentLongId);
+                    return true;
+                }
+            }
+        }else {
+            AssignmentJudgment assignmentJudgment = assignmentJudgmentRepository.getAssignmentJudgmentById(assignmentLongId);
+            if(assignmentJudgment == null)
+                return false;
+            //再删除该判断题
+            assignmentJudgmentRepository.deleteAssignmentJudgementById(assignmentLongId);
+            System.out.println("删除的判断题id:"+assignmentLongId);
+            return true;
+        }
+        return false;
+    }
+
+    //改:删除发布的简答题
+    public boolean deleteShort(String course_id, String mindmap_id, String node_id, Long assignmentLongId) {
+        //找到node
+        String course_mindmap = course_id + " " + mindmap_id;
+        Node node = nodeRepository.findByNodeId(course_mindmap,node_id);
+
+        if(node == null)
+            return false;
+        if(assignmentLongId == null)
+            return false;
+//        测试的时候打印相应信息
+//        System.out.println(node.toString());
+
+        //看该节点所有简答题中是否有该简答题
+        AssignmentShort[] assignmentShorts = nodeRepository.findAssignmentShort(node.getLong_id());
+        System.out.println(assignmentShorts.length);
+        if(assignmentShorts.length != 0){
+            for(AssignmentShort a:assignmentShorts){
+                if(a.getId().equals(assignmentLongId)){
+                    System.out.println("删除的简答题id:"+a.getId());
+                    //通过assignmentLongId删除HAS_ASSIGNMENT_SHORT关系
+                    nodeRepository.deleteNodeToShort(node.getLong_id(),assignmentLongId);
+                    //删除节点
+                    assignmentShortRepository.deleteAssignmentShortById(assignmentLongId);
+                    return true;
+                }
+            }
+        }else {
+            AssignmentShort assignmentShort = assignmentShortRepository.getAssignmentShortById(assignmentLongId);
+            if(assignmentShort == null)
+                return false;
+            //再删除该简答题
+            assignmentShortRepository.deleteAssignmentShortById(assignmentLongId);
+            System.out.println("删除的简答题id:"+assignmentLongId);
+            return true;
+        }
+        return false;
+    }
 }
